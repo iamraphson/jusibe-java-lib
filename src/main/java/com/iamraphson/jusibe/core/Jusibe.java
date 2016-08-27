@@ -37,7 +37,7 @@ public class Jusibe {
     private HttpURLConnection client = null;
     
     
-    public Jusibe(String publicKey, String accessToken) throws IsNullException{
+    public Jusibe(String publicKey, String accessToken) throws IsNullException, MalformedURLException{
         if(Strings.isNullOrEmpty(publicKey))
             throw new IsNullException("The Public Key can not be null or empty. Please pass it to the constructor");
         
@@ -47,12 +47,14 @@ public class Jusibe {
         
         this.publicKey = publicKey;
         this.accessToken = accessToken;
+        
+        client = new HttpURLConnection(this.publicKey, this.accessToken);
     }
     
     /**
      * Send SMS using the Jusibe API
      * @param payload
-     * @return $this
+     * @return 
      * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
      * @throws java.net.MalformedURLException
      */
@@ -62,11 +64,24 @@ public class Jusibe {
             throw new IsNullException("Message Payload can not be empty. Please fill the appropriate details");
         }
         
-        client = new HttpURLConnection(this.publicKey, this.accessToken);
         return client.performPostRequest("/smsapi/send_sms", payload);
+    }
+    
+    
+    /**
+     * Check the available SMS credits left in your JUSIBE account
+     * @return 
+     */
+    public String checkAvailableCredits() throws IOException{
+        return client.performGetRequest("/smsapi/get_credits");
     }
 
     
+    /**
+     * check if map collection is empty...
+     * @param m
+     * @return 
+     */
     public boolean isNullOrEmpty( final Map< ?, ? > m ) {
         return m == null || m.isEmpty();
     }
