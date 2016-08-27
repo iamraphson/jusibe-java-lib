@@ -51,6 +51,7 @@ public class Jusibe {
         client = new HttpURLConnection(this.publicKey, this.accessToken);
     }
     
+    
     /**
      * Send SMS using the Jusibe API
      * @param payload
@@ -71,11 +72,27 @@ public class Jusibe {
     /**
      * Check the available SMS credits left in your JUSIBE account
      * @return 
+     * @throws java.io.IOException 
      */
     public String checkAvailableCredits() throws IOException{
         return client.performGetRequest("/smsapi/get_credits");
     }
 
+    
+    /**
+     * Check the delivery status of a sent SMS
+     * @param messageID
+     * @return 
+     * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
+     * @throws java.io.IOException
+     */
+    public String checkDeliveryStatus(String messageID) throws IsNullException, IOException{
+        if(Strings.isNullOrEmpty(messageID))
+            throw new IsNullException("Message ID can not be empty.");
+        
+        return client.performGetRequest("/smsapi/delivery_status?message_id=" + messageID);
+    }
+    
     
     /**
      * check if map collection is empty...
