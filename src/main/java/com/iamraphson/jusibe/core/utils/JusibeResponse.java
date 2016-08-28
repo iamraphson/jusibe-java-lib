@@ -65,4 +65,12 @@ public class JusibeResponse {
         this.responseMessage = responseMessage;
     }
     
+    /**
+     * Convert JusibeResponse to String format 
+     * @return 
+     */
+    public String toString() {
+        return "Code: " + responseCode + " . message: " + responseMessage;
+    }
+    
 }

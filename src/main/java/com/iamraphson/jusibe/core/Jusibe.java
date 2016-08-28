@@ -8,6 +8,7 @@ package com.iamraphson.jusibe.core;
 import com.google.common.base.Strings;
 import com.iamraphson.jusibe.core.connection.JusibeClient;
 import com.iamraphson.jusibe.core.exceptions.IsNullException;
+import com.iamraphson.jusibe.core.utils.JusibeResponse;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Map;
@@ -59,7 +60,7 @@ public class Jusibe {
      * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
      * @throws java.net.MalformedURLException
      */
-    public String sendSMS(Map<String, String> payload) 
+    public JusibeResponse sendSMS(Map<String, String> payload) 
             throws IsNullException, MalformedURLException, IOException{
         if (this.isNullOrEmpty(payload)) {
             throw new IsNullException("Message Payload can not be empty. Please fill the appropriate details");
@@ -74,7 +75,7 @@ public class Jusibe {
      * @return 
      * @throws java.io.IOException 
      */
-    public String checkAvailableCredits() throws IOException{
+    public JusibeResponse checkAvailableCredits() throws IOException{
         return client.performGetRequest("/smsapi/get_credits");
     }
 
@@ -86,7 +87,7 @@ public class Jusibe {
      * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
      * @throws java.io.IOException
      */
-    public String checkDeliveryStatus(String messageID) throws IsNullException, IOException{
+    public JusibeResponse checkDeliveryStatus(String messageID) throws IsNullException, IOException{
         if(Strings.isNullOrEmpty(messageID))
             throw new IsNullException("Message ID can not be empty.");
         

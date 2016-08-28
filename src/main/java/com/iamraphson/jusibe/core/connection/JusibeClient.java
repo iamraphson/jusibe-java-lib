@@ -5,6 +5,7 @@
  */
 package com.iamraphson.jusibe.core.connection;
 
+import com.iamraphson.jusibe.core.utils.JusibeResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -89,7 +90,7 @@ public class JusibeClient {
      * @return 
      * @throws java.io.IOException 
      */
-    public String performGetRequest(String relativeUrl) throws IOException{
+    public JusibeResponse performGetRequest(String relativeUrl) throws IOException{
         HttpGet request = new HttpGet(baseURL + relativeUrl);
 
         // add request header
@@ -106,7 +107,7 @@ public class JusibeClient {
                 result.append(line);
         }
         
-        return result.toString();
+        return new JusibeResponse(responseCode, result.toString());
     }
     
     
@@ -117,7 +118,7 @@ public class JusibeClient {
      * @return 
      * @throws java.io.UnsupportedEncodingException 
      */
-    public String performPostRequest(String relativeUrl, Map<String, String> data) 
+    public JusibeResponse performPostRequest(String relativeUrl, Map<String, String> data) 
             throws UnsupportedEncodingException, IOException {
         HttpPost request = new HttpPost(baseURL + relativeUrl);
 
@@ -142,6 +143,6 @@ public class JusibeClient {
             result.append(line);
         
         
-        return result.toString();     
+        return new JusibeResponse(responseCode, result.toString());     
     }
 }
