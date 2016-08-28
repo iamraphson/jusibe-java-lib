@@ -27,7 +27,7 @@ import org.apache.http.message.BasicNameValuePair;
  *
  * @author Raphson
  */
-public class HttpURLConnection {
+public class JusibeClient {
     
     /**
      * Jusibe API Base Url 
@@ -77,7 +77,7 @@ public class HttpURLConnection {
      * @param accessToken
      * @throws java.net.MalformedURLException
      */
-    public HttpURLConnection(String publicKey, String accessToken) throws MalformedURLException{
+    public JusibeClient(String publicKey, String accessToken) throws MalformedURLException{
         encoding = Base64.encodeBase64String((publicKey + ":" + accessToken).getBytes());
         client = HttpClientBuilder.create().build();
     }

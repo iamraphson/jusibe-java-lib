@@ -6,7 +6,7 @@
 package com.iamraphson.jusibe.core;
 
 import com.google.common.base.Strings;
-import com.iamraphson.jusibe.core.connection.HttpURLConnection;
+import com.iamraphson.jusibe.core.connection.JusibeClient;
 import com.iamraphson.jusibe.core.exceptions.IsNullException;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -31,10 +31,10 @@ public class Jusibe {
     private String accessToken;
     
     /**
-     * Instance of HttpURLConnection
+     * Instance of JusibeClient
      * @var object
      */
-    private HttpURLConnection client = null;
+    private JusibeClient client = null;
     
     
     public Jusibe(String publicKey, String accessToken) throws IsNullException, MalformedURLException{
@@ -48,7 +48,7 @@ public class Jusibe {
         this.publicKey = publicKey;
         this.accessToken = accessToken;
         
-        client = new HttpURLConnection(this.publicKey, this.accessToken);
+        client = new JusibeClient(this.publicKey, this.accessToken);
     }
     
     
