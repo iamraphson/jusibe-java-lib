@@ -165,7 +165,7 @@ public class App {
             final Jusibe client = new Jusibe(PUBLIC_KEY, ACCESS_TOKEN);
             final Map<String, String> smsParams = new HashMap<String, String>();
             
-            smsParams.put("to", "08091167643"); // Replace with a valid phone number
+            smsParams.put("to", "xxxxxxxxxxxx"); // Replace with a valid phone number
             smsParams.put("from", "iamraphson"); // Replace with a valid phone number in your account
             smsParams.put("message", "Welcome to Jusibe JAVA lib");
             
