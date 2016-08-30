@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iamraphson.jusibe.core;
+package com.unicodelabs.jusibe.core;
 
-import com.iamraphson.jusibe.core.exceptions.IsNullException;
-import com.iamraphson.jusibe.core.utils.JusibeResponse;
+import com.unicodelabs.jusibe.core.Jusibe;
+import com.unicodelabs.jusibe.core.exceptions.IsNullException;
+import com.unicodelabs.jusibe.core.utils.JusibeResponse;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import static org.junit.Assert.assertEquals;

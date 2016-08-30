@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iamraphson.jusibe.core;
+package com.unicodelabs.jusibe.core;
 
 import com.google.common.base.Strings;
-import com.iamraphson.jusibe.core.connection.JusibeClient;
-import com.iamraphson.jusibe.core.exceptions.IsNullException;
-import com.iamraphson.jusibe.core.utils.JusibeResponse;
+import com.unicodelabs.jusibe.core.connection.JusibeClient;
+import com.unicodelabs.jusibe.core.exceptions.IsNullException;
+import com.unicodelabs.jusibe.core.utils.JusibeResponse;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Map;
@@ -57,7 +57,7 @@ public class Jusibe {
      * Send SMS using the Jusibe API
      * @param payload
      * @return 
-     * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
+     * @throws com.unicodelabs.jusibe.core.exceptions.IsNullException
      * @throws java.net.MalformedURLException
      */
     public JusibeResponse sendSMS(Map<String, String> payload) 
@@ -84,7 +84,7 @@ public class Jusibe {
      * Check the delivery status of a sent SMS
      * @param messageID
      * @return 
-     * @throws com.iamraphson.jusibe.core.exceptions.IsNullException
+     * @throws com.unicodelabs.jusibe.core.exceptions.IsNullException
      * @throws java.io.IOException
      */
     public JusibeResponse checkDeliveryStatus(String messageID) throws IsNullException, IOException{

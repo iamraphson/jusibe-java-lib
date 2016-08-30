@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iamraphson.jusibe.core.utils;
+package com.unicodelabs.jusibe.core.utils;
 
 /**
  *
