@@ -5,7 +5,6 @@
  */
 package com.unicodelabs.jusibe.core;
 
-import com.unicodelabs.jusibe.core.Jusibe;
 import com.unicodelabs.jusibe.core.exceptions.IsNullException;
 import com.unicodelabs.jusibe.core.utils.JusibeResponse;
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class JusibeTest {
                         "XXXXXXXXXXXXX");
         
         JusibeResponse response = client.checkAvailableCredits();
-        assertEquals(200, response.getResponseCode());
+        assertEquals(401, response.getResponseCode());
     }
     
     @Test
