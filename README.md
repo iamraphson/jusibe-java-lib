@@ -231,7 +231,7 @@ Please feel free to fork this package and contribute by submitting a pull reques
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Hackathon Starter, please send an e-mail to Ayeni Olusegun at nsegun5@gmail.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Jusibe java library , please send an e-mail to Ayeni Olusegun at nsegun5@gmail.com. All security vulnerabilities will be promptly addressed.
 
 ## How can I thank you?
 
