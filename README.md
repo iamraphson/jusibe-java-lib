@@ -15,8 +15,18 @@ Once you have created an account, you can access your Public key and Access Toke
 
 - Java version Oracle JDK 7, 8 or OpenJDK 7
 
-###Jar-File
+### Maven
+Include the following in your `pom.xml` for Maven:
 
+```xml
+<dependency>
+    <groupId>com.unicodelabs</groupId>
+    <artifactId>jusibe-java-lib</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+###Jar-File
 You can also download the jar file from the latest release on the [releases page](https://github.com/iamraphson/jusibe-java-lib/releases).
 
 ##Usage
