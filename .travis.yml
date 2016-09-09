@@ -1,7 +1,13 @@
 language: java
 sudo: false
 jdk:
- - oraclejdk8
-script: mvn clean verify
+  - oraclejdk7
+  - oraclejdk8
+  - openjdk7
+  - openjdk6
+script:
+  mvn install -DskipTests=true -Dgpg.skip=true
+  mvn test
+  mvn clean verify
 after_success:
 after_failure:
