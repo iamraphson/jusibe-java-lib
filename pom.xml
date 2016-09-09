@@ -6,7 +6,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>com.unicodelabs:jusibe-java-lib</name>
+    <name>Jusibe Java SDK</name>
     <description>JAVA Client Library for Jusibe SMS REST API Service</description>
     <url>https://jusibe.com/</url>
 
