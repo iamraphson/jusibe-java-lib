@@ -87,7 +87,7 @@
                 </descriptorRefs>
               </configuration>
             </plugin>
-            <!--plugin>
+            <plugin>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.5</version>
                 <executions>
@@ -99,7 +99,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin-->
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
