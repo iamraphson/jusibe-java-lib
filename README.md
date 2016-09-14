@@ -57,14 +57,14 @@ This lets you make a request to the Jusibe API, to send an SMS. It takes a `java
 try {
     final Jusibe client = new Jusibe("{PUBLIC_KEY}", "{ACCESS_TOKEN}");
     final Map<String, String> smsParams = new HashMap<String, String>();
-    
+
     smsParams.put("to", "XXXXXXXXXX"); // Replace with a valid phone number
     smsParams.put("from", "Jusibe Joe"); // Replace with a valid Sender
     smsParams.put("message", "Welcome to Jusibe JAVA lib");
-    
+
     JusibeResponse smsResponse = client.sendSMS(smsParams);
     System.out.println(smsResponse.toString());
-    
+
     JSONObject smsResultObject = (JSONObject)new JSONParser().parse(smsResponse.getResponseMessage());
     if(smsResponse.getResponseCode() == 200){
         System.out.println("your SMS Message ID is " + smsResultObject.get("message_id"));
@@ -136,7 +136,7 @@ try{
 ```
 
 ### Jusibe Models
-You may have seen references to Classes such as `com.iamraphson.jusibe.core.utils.JusibeResponse` in above sections of this documents. 
+You may have seen references to Classes such as `com.iamraphson.jusibe.core.utils.JusibeResponse` in above sections of this documents.
 - `JusibeResponse` class
       - `string responseCode`
       - `string responseMessage`
@@ -145,8 +145,8 @@ You may have seen references to Classes such as `com.iamraphson.jusibe.core.util
       - `string getResponseMessage()`
       - `setResponseMessage(String responseMessage)`
 
-# Examples
-Here are an examples 
+# Example
+Here is an example
 
 ```java
 package com.iamraphson.jusibe.core.example;
@@ -169,20 +169,20 @@ import org.json.simple.parser.ParseException;
 public class App {
     public static final String PUBLIC_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXX";
     public static final String ACCESS_TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
-  
+
     public static void main( String[] args ){
         try {
             final Jusibe client = new Jusibe(PUBLIC_KEY, ACCESS_TOKEN);
             final Map<String, String> smsParams = new HashMap<String, String>();
-            
+
             smsParams.put("to", "xxxxxxxxxxxx"); // Replace with a valid phone number
             smsParams.put("from", "iamraphson"); // Replace with a valid phone number in your account
             smsParams.put("message", "Welcome to Jusibe JAVA lib");
-            
+
             JusibeResponse smsResponse = client.sendSMS(smsParams);
             System.out.println(smsResponse.toString());
-            
-            JSONObject smsResultObject = 
+
+            JSONObject smsResultObject =
                     (JSONObject)new JSONParser().parse(smsResponse.getResponseMessage());
             if(smsResponse.getResponseCode() == 200){
                 System.out.println("your SMS Message ID is " + smsResultObject.get("message_id"));
@@ -192,11 +192,11 @@ public class App {
             } else {
                 System.out.println(smsResultObject.get("error"));
             }
-            
-            
+
+
             JusibeResponse balResponse = client.checkAvailableCredits();
             System.out.println(balResponse.toString());
-            JSONObject balResultObject = 
+            JSONObject balResultObject =
                         (JSONObject)new JSONParser().parse(balResponse.getResponseMessage());
             if(balResponse.getResponseCode() == 200){
                 System.out.println("your SMS balance is " + balResultObject.get("sms_credits"));
@@ -204,25 +204,25 @@ public class App {
             } else {
                 System.out.println(balResultObject.get("error"));
             }
-            
-            
-            JusibeResponse deliveryResponse = 
+
+
+            JusibeResponse deliveryResponse =
                     client.checkDeliveryStatus("w719zxz58q");
             System.out.println(deliveryResponse.toString());
-            JSONObject deliveryResultObject = 
+            JSONObject deliveryResultObject =
                         (JSONObject)new JSONParser().parse(deliveryResponse.getResponseMessage());
             if(deliveryResponse.getResponseCode() == 200){
                 System.out.println("your SMS Status is " + deliveryResultObject.get("status"));
                 System.out.println("your SMS Message ID is " + deliveryResultObject.get("message_id"));
                 System.out.println("your SMS Sent Date is " + deliveryResultObject.get("date_sent"));
-                System.out.println("your SMS Delivered Date is " 
+                System.out.println("your SMS Delivered Date is "
                         + deliveryResultObject.get("date_delivered"));
                 System.out.println("your request speed is " + deliveryResultObject.get("request_speed"));
             } else {
                 System.out.println(deliveryResultObject.get("error"));
             }
-            
-            
+
+
         } catch (IsNullException ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -231,7 +231,7 @@ public class App {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
 ```
 ## Contributing

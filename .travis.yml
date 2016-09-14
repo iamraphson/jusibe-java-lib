@@ -6,7 +6,7 @@ jdk:
   - openjdk7
   - openjdk6
 script:
-  mvn install -DskipTests=true -Dgpg.skip=true
+  mvn install  -gpg.skip=true
   mvn test
   mvn clean verify
 after_success:
